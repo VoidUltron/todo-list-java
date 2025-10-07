@@ -1,9 +1,7 @@
 package todoClass;
 
 public class Inicio {
-    public static void main(String[] args) {
-    		System.out.println();
-
-		
-	}
+    private String nome;
+    private String descricao;
+    private Boolean concluida;
 }
