@@ -14,8 +14,10 @@ public class TesteBancoJdbc{
 		ClasPosDao clasposdao = new ClasPosDao();
 	    todoClass todoclass = new todoClass();
 	    
-	    todoclass.setId(6L);
+	    todoclass.setId(7L);
 	    todoclass.setNome("Pablo teste");
+	    todoclass.setDescricao("Fazer compras");
+	    
 	    
 	    clasposdao.salvar(todoclass);
 	}
