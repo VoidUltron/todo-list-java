@@ -32,4 +32,10 @@ public class todoClass {
 	public void setConcluida(Boolean concluida) {
 		this.concluida = concluida;
 	}
+	@Override
+	public String toString() {
+		return "todoClass [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", concluida=" + concluida
+				+ "]";
+	}
+	
 }
