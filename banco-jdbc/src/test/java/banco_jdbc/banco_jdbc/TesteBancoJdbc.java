@@ -39,4 +39,35 @@ public class TesteBancoJdbc{
 		}
 	}
 
+	@Test
+	public void initAtualizar() {
+		try {
+			ClasPosDao dao = new ClasPosDao();
+
+			todoClass objetoBanco = dao.buscar(5L);
+			
+			objetoBanco.setNome("Nome atualizado");
+			
+			dao.atualizar(objetoBanco);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void initBuscar() {
+		
+		ClasPosDao dao = new ClasPosDao();
+		todoClass todoclass;
+		try {
+			todoclass = dao.buscar(6L);
+			System.out.println(todoclass);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 }

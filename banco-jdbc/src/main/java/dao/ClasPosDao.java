@@ -59,5 +59,43 @@ public class ClasPosDao {
 		
 		return list;
 	}
+	
+	public todoClass buscar(Long id) throws Exception{
+		todoClass retorno = new todoClass();
+		
+		String sql = "select * from titulo";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		ResultSet resultado = statement.executeQuery();
+		
+		while(resultado.next()) {
+			todoClass todoclass = new todoClass();
+			retorno.setId(resultado.getLong("id"));
+			retorno.setNome(resultado.getString("nome")); 
+			retorno.setDescricao(resultado.getString("descricao"));
+			
+		}
+		
+		return retorno;
+	}
+	
+	public void atualizar(todoClass todoclass) {
+		try {
+			String sql = "update titulo set nome = ? where id = " + todoclass.getId();
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, todoclass.getNome());
+
+			statement.execute();
+			connection.commit();
+		} catch (Exception e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+
 	}
 
+}
