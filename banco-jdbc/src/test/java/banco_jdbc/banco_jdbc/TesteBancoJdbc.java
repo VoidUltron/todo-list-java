@@ -16,7 +16,6 @@ public class TesteBancoJdbc{
 		ClasPosDao clasposdao = new ClasPosDao();
 	    todoClass todoclass = new todoClass();
 	    
-	    todoclass.setId(9L);
 	    todoclass.setNome("Pablo teste");
 	    todoclass.setDescricao("Fazer compras");
 	    
@@ -46,7 +45,7 @@ public class TesteBancoJdbc{
 
 			todoClass objetoBanco = dao.buscar(5L);
 			
-			objetoBanco.setNome("Nome atualizado");
+			objetoBanco.setNome("Nome atualizado COM METODO");
 			
 			dao.atualizar(objetoBanco);
 			

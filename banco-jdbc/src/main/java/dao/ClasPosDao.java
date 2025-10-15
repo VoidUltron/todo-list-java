@@ -22,11 +22,10 @@ public class ClasPosDao {
 	
 	public void salvar(todoClass todoclass) {
 		try {
-		String sql = "insert into titulo (id, nome, descricao) values(?,?,?)";
+		String sql = "insert into titulo (nome, descricao) values(?,?)";
 		PreparedStatement insert = connection.prepareStatement(sql);
-		insert.setLong(1, todoclass.getId());
-		insert.setString(2, todoclass.getNome());
-		insert.setString(3, todoclass.getDescricao());
+		insert.setString(1, todoclass.getNome());
+		insert.setString(2, todoclass.getDescricao());
 		insert.execute();
 		connection.commit(); // salva no banco
 		System.out.println("inserido!");
