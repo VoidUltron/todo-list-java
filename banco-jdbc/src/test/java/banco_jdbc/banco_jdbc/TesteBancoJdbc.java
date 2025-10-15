@@ -16,8 +16,8 @@ public class TesteBancoJdbc{
 		ClasPosDao clasposdao = new ClasPosDao();
 	    todoClass todoclass = new todoClass();
 	    
-	    todoclass.setNome("Pablo teste");
-	    todoclass.setDescricao("Fazer compras");
+	    todoclass.setNome("Pablo Henrique Gonçalves");
+	    todoclass.setDescricao("Fazer compras online");
 	    
 	    
 	    clasposdao.salvar(todoclass);
@@ -67,6 +67,15 @@ public class TesteBancoJdbc{
 			e.printStackTrace();
 		}
 		
+	}
+	@Test
+	public void initDeletar() {
+		
+		try {
+		    ClasPosDao dao = new ClasPosDao();
+		    dao.deletar(1L);
+		} catch (Exception e) {
+			e.printStackTrace();		}
 	}
 
 }

@@ -96,5 +96,21 @@ public class ClasPosDao {
 		}
 
 	}
+	
+	public void deletar(Long id) {
+		try {
+			String sql = "delete from titulo where id = " + id;
+			PreparedStatement preparedstatement = connection.prepareStatement(sql);
+			preparedstatement.execute();
+			connection.commit();
+		} catch (Exception e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
 
 }
